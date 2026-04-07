@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CEO Fleet Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function toggle(id) {
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h2>CEO Dashboard</h2>
+    <div class="dashboard">
+      
+      <div class="card full">
+        <div class="stats">Total Assets: 120 | Movable: 95 | Immovable: 25</div>
+        <div class="header" onclick="toggle('movable')">
+        View Movable Assets
+        </div>
+        <div class="content" id="movable">
+          <div class="item">KDA 234X - Truck</div>
+          <div class="item">KBC 112A - Van</div>
+          <div class="item">KDJ 908Y - Pickup</div>
+        </div>
+        <div class="header" onclick="toggle('immovable')">
+          View Immovable Assets
+        </div>
+        <div class="content" id="immovable">
+          <div class="item">Nairobi Depot</div>
+          <div class="item">Mombasa Warehouse</div>
+          <div class="item">Head Office</div>
+        </div>
+      </div>
+     
+      <div class="middle">
+        
+        <div class="card">
+          <div class="stats">
+            Mileage: 48,200 km (This Month) | Avg: 507 km/vehicle
+          </div>
+          <div class="chart"><canvas id="myChart"></canvas></div>
+          <div class="header" onclick="toggle('mileageDetails')">
+            View Vehicle Mileage
+          </div>
+          <div class="content" id="mileageDetails">
+            <div class="item">KDA 234X → 3,200 km</div>
+            <div class="item">KBC 112A → 2,800 km</div>
+            <div class="item">KDJ 908Y → 1,950 km</div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="stats">Fuel Used: 12,500 L | Efficiency: 3.85 km/L</div>
+          <div class="chart"><canvas id="fuelChart"></canvas></div>
+          <div class="header" onclick="toggle('fuelDetails')">
+            View Fuel Consumption per Vehicle
+          </div>
+          <div class="content" id="fuelDetails">
+            <div class="item">KDA 234X → 900 L</div>
+            <div class="item">KBC 112A → 750 L</div>
+            <div class="item">KDJ 908Y → 620 L</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card full-bottom">
+        <div class="stats">Insights</div>
+        <div class="item">⚠ Fuel usage up 15%</div>
+        <div class="item">⚠ 3 inefficient vehicles</div>
+        <div class="header" onclick="toggle('insightDetails')">
+           View Affected Vehicles
+        </div>
+        <div class="content" id="insightDetails">
+          <div class="item">KDA 234X - High fuel consumption</div>
+          <div class="item">KBC 112A - Low efficiency</div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
