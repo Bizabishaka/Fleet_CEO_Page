@@ -87,3 +87,32 @@ body {
   }
 }
 
+.fleet-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.fleet-table th,
+.fleet-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.fleet-table th {
+  background: #f1f5f9;
+}
+
+.status-online {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.status-offline {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+

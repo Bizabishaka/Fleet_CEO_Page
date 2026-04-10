@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CEO Fleet Dashboard</title>
     <link rel="stylesheet" href="index.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -17,29 +17,30 @@
   <body>
     <h2>CEO Dashboard</h2>
     <div class="dashboard">
-      
       <div class="card full">
-        <div class="stats">Total Assets: 120 | Movable: 95 | Immovable: 25</div>
-        <div class="header" onclick="toggle('movable')">
-        View Movable Assets
+        <div class="header" onclick="toggle('fleetTable')">
+          View Fleet Status
         </div>
-        <div class="content" id="movable">
-          <div class="item">KDA 234X - Truck</div>
-          <div class="item">KBC 112A - Van</div>
-          <div class="item">KDJ 908Y - Pickup</div>
+
+        <div class="content" id="fleetTable">
+          <table class="fleet-table">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Driver</th>
+                <th>Status</th>
+                <th>Idle Time (min)</th>
+              </tr>
+            </thead>
+            <tbody id="fleetBody">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
         </div>
-        <div class="header" onclick="toggle('immovable')">
-          View Immovable Assets
-        </div>
-        <div class="content" id="immovable">
-          <div class="item">Nairobi Depot</div>
-          <div class="item">Mombasa Warehouse</div>
-          <div class="item">Head Office</div>
-        </div>
-      </div>
-     
-      <div class="middle">
         
+      </div>
+
+      <div class="middle">
         <div class="card">
           <div class="stats">
             Mileage: 48,200 km (This Month) | Avg: 507 km/vehicle
@@ -54,7 +55,7 @@
             <div class="item">KDJ 908Y → 1,950 km</div>
           </div>
         </div>
-        
+
         <div class="card">
           <div class="stats">Fuel Used: 12,500 L | Efficiency: 3.85 km/L</div>
           <div class="chart"><canvas id="fuelChart"></canvas></div>
@@ -68,13 +69,13 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card full-bottom">
         <div class="stats">Insights</div>
         <div class="item">Fuel usage up 15%</div>
         <div class="item">3 inefficient vehicles</div>
         <div class="header" onclick="toggle('insightDetails')">
-           View Affected Vehicles
+          View Affected Vehicles
         </div>
         <div class="content" id="insightDetails">
           <div class="item">KDA 234X - High fuel consumption</div>
