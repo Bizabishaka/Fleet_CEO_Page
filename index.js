@@ -107,6 +107,7 @@ worst.forEach(v => {
   insightBody.innerHTML += `
     <tr>
       <td>${v.vehicle}</td>
+      <td>${v.fuel}</td>
       <td>${v.fuelLoss}</td>
       <td>${v.efficiency}</td>
       <td class="${v.status === "Online" ? "status-online" : "status-offline"}">
